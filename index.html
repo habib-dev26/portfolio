@@ -1,0 +1,733 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>habib-dev26 | Developer Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --red: #ff102f;
+  --red2: #ff304d;
+  --dark-red: #a00020;
+  --bg: #070609;
+  --panel: #111015;
+  --white: #fffafa;
+  --muted: #aaa4ae;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Space Grotesk', sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 80% 10%, #ff102f22, transparent 35%),
+    radial-gradient(ellipse at 5% 55%, #d000281b, transparent 35%),
+    radial-gradient(ellipse at 50% 100%, #ff102f0d, transparent 40%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .13;
+  background-image: linear-gradient(#ff183808 1px, transparent 1px),
+                    linear-gradient(90deg, #ff183808 1px, transparent 1px);
+  background-size: 45px 45px;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+  width: min(1150px, 90%);
+  margin: auto;
+}
+
+header {
+  height: 82px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #080609ed;
+  border-bottom: 1px solid #ff18383a;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 5px 30px #ff102f0a;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.logo-icon {
+  color: var(--red);
+  font-size: 27px;
+  text-shadow: 0 0 12px var(--red), 0 0 30px #ff102f;
+}
+
+.logo span:last-child {
+  color: #fff;
+}
+
+.logo span:last-child span {
+  color: var(--red);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #c3bdc5;
+  font-size: 13px;
+  font-weight: 600;
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: var(--red2);
+  text-shadow: 0 0 15px #ff1838;
+}
+
+.menu-btn {
+  display: none;
+  color: white;
+  background: none;
+  border: none;
+  font-size: 27px;
+  cursor: pointer;
+}
+
+.hero {
+  min-height: 690px;
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+  gap: 45px;
+  padding-top: 45px;
+  padding-bottom: 65px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #ff778b;
+  background: #ff102f20;
+  border: 1px solid #ff304d75;
+  padding: 10px 16px;
+  border-radius: 50px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  box-shadow: 0 0 25px #ff102f14, inset 0 0 15px #ff102f0b;
+}
+
+.tag i {
+  width: 8px;
+  height: 8px;
+  background: var(--red);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--red), 0 0 18px var(--red);
+}
+
+.hero h1 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(42px, 6vw, 75px);
+  line-height: 1.12;
+  letter-spacing: -3.5px;
+  margin: 25px 0;
+  font-weight: 800;
+}
+
+.hero h1 span {
+  color: var(--red);
+  text-shadow: 0 0 20px #ff102f65, 0 0 55px #ff102f30;
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+  max-width: 570px;
+}
+
+.buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 33px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 23px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 800;
+  transition: .3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+
+.btn-primary {
+  color: white;
+  background: linear-gradient(120deg, #ff102f, #c90028);
+  border: 1px solid #ff526a;
+  box-shadow: 0 7px 30px #ff18384d, inset 0 1px 0 #ffffff35;
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px #ff183880;
+}
+
+.btn-outline {
+  border: 1px solid #ff304d70;
+  color: white;
+  background: #ff102f0b;
+}
+
+.btn-outline:hover {
+  border-color: var(--red);
+  color: var(--red2);
+  box-shadow: 0 0 20px #ff183820;
+}
+
+/* 3D PROGRAMMER LOGO */
+.code-card {
+  width: 100%;
+  max-width: 420px;
+  justify-self: end;
+  border: 1px solid #ff304d80;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #1d1017, #0c0a10);
+  box-shadow: 0 0 40px #ff102f20, 0 25px 70px #000b;
+  overflow: hidden;
+  transform: perspective(900px) rotateY(-8deg) rotateX(3deg);
+  transition: .5s;
+}
+
+.code-card:hover {
+  transform: perspective(900px) rotateY(0deg) rotateX(0deg) translateY(-7px);
+  box-shadow: 0 0 65px #ff102f35, 0 25px 70px #000b;
+}
+
+.code-top {
+  display: flex;
+  gap: 7px;
+  padding: 16px;
+  border-bottom: 1px solid #ff304d35;
+  background: #ff102f0b;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 9px #ff1838;
+}
+
+.dot:nth-child(2) { background: #ffbd4a; box-shadow: 0 0 9px #ffbd4a; }
+.dot:nth-child(3) { background: #40d98b; box-shadow: 0 0 9px #40d98b; }
+
+.code-body {
+  padding: 25px 30px;
+  font-family: monospace;
+  line-height: 2.1;
+  font-size: 14px;
+  color: #d2cbd4;
+}
+
+.code-red { color: #ff526e; }
+.code-green { color: #80f0a8; }
+.code-blue { color: #85bdff; }
+.code-purple { color: #d19bff; }
+
+.code-logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 78px;
+  font-weight: 900;
+  letter-spacing: -7px;
+  text-align: center;
+  padding: 22px 0 10px;
+  color: #ff193d;
+  background: linear-gradient(180deg, #fff0f2 0%, #ff3857 25%, #d00028 65%, #780018 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 3px 0 #650016)
+          drop-shadow(0 7px 0 #39000e)
+          drop-shadow(0 12px 15px #ff102f88);
+  transform: perspective(400px) rotateX(8deg);
+  animation: logoGlow 3s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+  0%, 100% { filter: drop-shadow(0 3px 0 #650016) drop-shadow(0 7px 0 #39000e) drop-shadow(0 12px 15px #ff102f65); }
+  50% { filter: drop-shadow(0 3px 0 #650016) drop-shadow(0 7px 0 #39000e) drop-shadow(0 12px 25px #ff102f); }
+}
+
+section {
+  padding: 90px 0;
+}
+
+.section-head {
+  margin-bottom: 40px;
+}
+
+.section-head small {
+  color: #ff526e;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 12px #ff1838;
+}
+
+.section-head h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(29px, 4vw, 42px);
+  margin-top: 13px;
+  letter-spacing: -1.5px;
+  font-weight: 800;
+}
+
+.section-head h2 span {
+  color: var(--red);
+  text-shadow: 0 0 22px #ff102f3c;
+}
+
+.section-head p {
+  color: var(--muted);
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 22px;
+}
+
+.card {
+  background: linear-gradient(145deg, #19131a, #0e0c12);
+  border: 1px solid #ff304d30;
+  border-radius: 15px;
+  padding: 28px;
+  transition: .3s;
+  box-shadow: inset 0 1px 0 #ffffff08;
+}
+
+.card:hover {
+  border-color: #ff304d;
+  box-shadow: 0 0 30px #ff102f1a, inset 0 1px 0 #ffffff10;
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.info-list {
+  display: grid;
+  gap: 15px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid #ff304d20;
+  padding-bottom: 12px;
+  font-size: 13px;
+}
+
+.info-item span:first-child { color: var(--muted); }
+.info-item span:last-child { color: white; font-weight: 700; text-align: right; }
+
+.skills-grid, .projects-grid, .goals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.skill-card {
+  min-height: 180px;
+}
+
+.skill-icon {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: #ff536e;
+  background: linear-gradient(145deg, #ff18383b, #9e001c30);
+  border: 1px solid #ff304d60;
+  box-shadow: 0 0 20px #ff18381c;
+  font-size: 23px;
+  margin-bottom: 20px;
+}
+
+.skill-card h3 { margin-bottom: 10px; }
+
+.project-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+.project-top {
+  height: 145px;
+  background:
+    radial-gradient(circle at 70% 30%, #ff18386b, transparent 38%),
+    linear-gradient(135deg, #390b18, #111116);
+  display: grid;
+  place-items: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 34px;
+  color: #ff304d;
+  text-shadow: 0 0 15px #ff1838, 0 0 35px #ff1838;
+  border-bottom: 1px solid #ff304d35;
+}
+
+.project-content { padding: 23px; }
+
+.project-content h3 { margin-bottom: 10px; }
+
+.project-label {
+  display: inline-block;
+  margin-top: 17px;
+  color: #ff8093;
+  font-size: 11px;
+  background: #ff183824;
+  border: 1px solid #ff304d55;
+  padding: 7px 11px;
+  border-radius: 30px;
+}
+
+.goal-card {
+  border-top: 2px solid var(--red);
+  box-shadow: inset 0 10px 30px #ff102f08;
+}
+
+.goal-number {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--red);
+  font-size: 27px;
+  margin-bottom: 18px;
+  text-shadow: 0 0 15px #ff1838;
+}
+
+.contact {
+  background:
+    radial-gradient(ellipse at center, #ff102f1e, transparent 70%),
+    linear-gradient(135deg, #19070e, #0b0b10);
+  border-top: 1px solid #ff18384a;
+  border-bottom: 1px solid #ff18384a;
+}
+
+.contact-box {
+  text-align: center;
+  max-width: 650px;
+  margin: auto;
+}
+
+.contact-box h2 {
+  font-size: clamp(30px, 5vw, 45px);
+  margin-bottom: 15px;
+}
+
+.contact-box h2 span {
+  color: var(--red);
+  text-shadow: 0 0 20px #ff183855;
+}
+
+.contact-box p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+footer {
+  padding: 28px 0;
+  text-align: center;
+  color: #89818c;
+  font-size: 12px;
+}
+
+footer span {
+  color: var(--red);
+  text-shadow: 0 0 12px #ff1838;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: .7s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media(max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 70px;
+    gap: 50px;
+  }
+
+  .code-card {
+    justify-self: center;
+    transform: none;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid, .projects-grid, .goals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 81px;
+    left: 0;
+    width: 100%;
+    background: #100b11;
+    border-bottom: 1px solid #ff18384a;
+    padding: 25px;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .nav-links.active { display: flex; }
+  .menu-btn { display: block; }
+}
+
+@media(max-width: 520px) {
+  .skills-grid, .projects-grid, .goals-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section { padding: 65px 0; }
+  .hero h1 { letter-spacing: -2px; }
+  .code-body { padding: 20px; font-size: 12px; }
+  .buttons .btn { width: 100%; }
+}
+
+/* ===== YANGI: 3D kub, kunduzgi rejim, til tanlash ===== */
+.stage{height:250px;display:grid;place-items:center;perspective:900px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 55%,#3a0812,#0b0a10 70%)}
+.stage:before{content:"";position:absolute;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,#ff102f55,transparent 65%)}
+.ring{position:absolute;width:240px;height:240px;border:2px solid #ff304d99;border-radius:50%;transform:rotateX(74deg);box-shadow:0 0 24px #ff102f77,inset 0 0 24px #ff102f55;animation:ringp 3s ease-in-out infinite}
+@keyframes ringp{50%{box-shadow:0 0 40px #ff102fcc,inset 0 0 36px #ff102f88}}
+.cube{width:130px;height:130px;position:relative;transform-style:preserve-3d;animation:spin 14s linear infinite}
+.stage:hover .cube{animation-play-state:paused}
+.face{position:absolute;inset:0;display:grid;place-items:center;font:900 34px Orbitron,sans-serif;color:#fff;background:linear-gradient(145deg,#2c0711,#07060a 72%);border:2px solid #ff304d;box-shadow:inset 0 0 30px #ff102f88,0 0 20px #ff102f55;text-shadow:0 0 12px #ff102f,0 0 26px #ff102f}
+.f1{transform:translateZ(65px)}.f2{transform:rotateY(180deg) translateZ(65px)}.f3{transform:rotateY(90deg) translateZ(65px)}.f4{transform:rotateY(-90deg) translateZ(65px)}.f5{transform:rotateX(90deg) translateZ(65px)}.f6{transform:rotateX(-90deg) translateZ(65px)}
+@keyframes spin{from{transform:rotateX(-22deg) rotateY(0)}to{transform:rotateX(-22deg) rotateY(360deg)}}
+.ctl{display:flex;gap:8px;align-items:center}
+.ctl select,.ctl button{background:#1a0a10;color:#fff;border:1px solid #ff304d70;border-radius:8px;padding:8px 10px;font-weight:700;font-size:13px;cursor:pointer}
+.ctl button:hover,.ctl select:hover{border-color:var(--red)}
+[data-theme=light]{--bg:#fff5f6;--white:#1b1015;--muted:#5e5058}
+[data-theme=light] body::before{background:radial-gradient(ellipse at 80% 10%,#ff102f22,transparent 40%),radial-gradient(ellipse at 5% 55%,#ff304d16,transparent 40%)}
+[data-theme=light] body::after{opacity:.55}
+[data-theme=light] header{background:#fff5f6ed;border-bottom-color:#ff304d55;box-shadow:0 5px 25px #ff102f12}
+[data-theme=light] .nav-links a{color:#4a3a42}
+[data-theme=light] .nav-links{background:#fff5f6}
+[data-theme=light] .logo span:last-child,[data-theme=light] .info-item span:last-child,[data-theme=light] .btn-outline,[data-theme=light] .menu-btn{color:#1b1015}
+[data-theme=light] .btn-outline{background:#fff}
+[data-theme=light] .card{background:linear-gradient(145deg,#fff,#ffeef0);border-color:#ff304d55;box-shadow:0 6px 24px #ff102f12}
+[data-theme=light] .contact{background:radial-gradient(ellipse at center,#ff102f1c,transparent 70%),linear-gradient(135deg,#fff0f2,#ffe2e6)}
+[data-theme=light] .tag{color:#c4122f}
+[data-theme=light] footer{color:#6b5a62}
+[data-theme=light] .ctl select,[data-theme=light] .ctl button{background:#fff;color:#1b1015}
+@media(max-width:520px){.ctl select,.ctl button{padding:7px 8px}.logo{font-size:15px}}
+</style>
+</head>
+<body>
+<header><div class="container nav">
+<a href="#home" class="logo"><span class="logo-icon">&lt;/&gt;</span><span>DEV<span>PORTFOLIO</span></span></a>
+<nav class="nav-links" id="navLinks">
+<a href="#home" data-i="n_home"></a><a href="#about" data-i="n_about"></a><a href="#skills" data-i="n_skills"></a><a href="#projects" data-i="n_projects"></a><a href="loyihalar.html" data-i="n_all"></a><a href="#goals" data-i="n_goals"></a><a href="#contact" data-i="n_contact"></a>
+</nav>
+<div class="ctl"><select id="lang" aria-label="Language"><option value="uz">UZ</option><option value="ru">RU</option><option value="en">EN</option></select><button id="theme" type="button" aria-label="Theme">☀️</button></div>
+<button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+</div></header>
+<main>
+<section class="container hero" id="home">
+<div class="hero-text">
+<div class="tag"><i></i> <span data-i="tag"></span></div>
+<h1 data-i="h1"></h1>
+<p data-i="hp"></p>
+<div class="buttons"><a href="#projects" class="btn btn-primary" data-i="b1"></a><a href="#about" class="btn btn-outline" data-i="n_about"></a></div>
+</div>
+<div class="code-card">
+<div class="code-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+<div class="stage"><div class="ring"></div>
+<div class="cube"><div class="face f1">&lt;/&gt;</div><div class="face f2">{ }</div><div class="face f3">JS</div><div class="face f4">CSS</div><div class="face f5">HTML</div><div class="face f6">★</div></div></div>
+<div class="code-body">
+<div><span class="code-purple">const</span> developer = {</div>
+<div>&nbsp;&nbsp;name: <span class="code-green">"habib-dev26"</span>,</div>
+<div>&nbsp;&nbsp;level: <span class="code-green">"Beginner"</span>,</div>
+<div>&nbsp;&nbsp;passion: <span class="code-green">"Coding"</span>,</div>
+<div>&nbsp;&nbsp;dream: <span class="code-green">"Big projects"</span>,</div>
+<div>&nbsp;&nbsp;learning: <span class="code-blue">true</span></div>
+<div>};</div><br>
+<div><span class="code-red">// Never stop learning.</span></div>
+</div></div>
+</section>
+
+<section id="about"><div class="container">
+<div class="section-head reveal"><small data-i="s1"></small><h2 data-i="a_h2"></h2><p data-i="a_p"></p></div>
+<div class="about-grid">
+<div class="card reveal"><h3 data-i="a_c1h"></h3><p data-i="a_c1p"></p></div>
+<div class="card reveal"><h3 data-i="a_c2h"></h3><div class="info-list">
+<div class="info-item"><span>GitHub</span><span>habib-dev26</span></div>
+<div class="info-item"><span data-i="i_level"></span><span data-i="v_level"></span></div>
+<div class="info-item"><span data-i="i_team"></span><span>AI Coding Lab</span></div>
+</div></div></div></div></section>
+
+<section id="skills"><div class="container">
+<div class="section-head reveal"><small data-i="s2"></small><h2 data-i="sk_h2"></h2><p data-i="sk_p"></p></div>
+<div class="skills-grid">
+<div class="card skill-card reveal"><div class="skill-icon">&lt;/&gt;</div><h3>HTML</h3><p data-i="html_p"></p></div>
+<div class="card skill-card reveal"><div class="skill-icon">✦</div><h3>CSS</h3><p data-i="css_p"></p></div>
+<div class="card skill-card reveal"><div class="skill-icon">JS</div><h3>JavaScript</h3><p data-i="js_p"></p></div>
+</div></div></section>
+
+<section id="projects"><div class="container">
+<div class="section-head reveal"><small data-i="s3"></small><h2 data-i="pr_h2"></h2><p data-i="pr_p"></p></div>
+<div class="projects-grid">
+<div class="card project-card reveal"><div class="project-top">KINO</div><div class="project-content"><h3 data-i="p1h"></h3><p data-i="p1p"></p><span class="project-label" data-i="lab1"></span></div></div>
+<div class="card project-card reveal"><div class="project-top">BOOKS</div><div class="project-content"><h3 data-i="p2h"></h3><p data-i="p2p"></p><span class="project-label" data-i="lab1"></span></div></div>
+<div class="card project-card reveal"><div class="project-top">&lt;/&gt;</div><div class="project-content"><h3 data-i="p3h"></h3><p data-i="p3p"></p><span class="project-label" data-i="lab2"></span></div></div>
+</div></div></section>
+
+<section id="goals"><div class="container">
+<div class="section-head reveal"><small data-i="s4"></small><h2 data-i="g_h2"></h2><p data-i="g_p"></p></div>
+<div class="goals-grid">
+<div class="card goal-card reveal"><div class="goal-number">01</div><h3 data-i="g1h"></h3><p data-i="g1p"></p></div>
+<div class="card goal-card reveal"><div class="goal-number">02</div><h3 data-i="g2h"></h3><p data-i="g2p"></p></div>
+<div class="card goal-card reveal"><div class="goal-number">03</div><h3 data-i="g3h"></h3><p data-i="g3p"></p></div>
+</div></div></section>
+
+<section class="contact" id="contact"><div class="container"><div class="contact-box reveal">
+<div class="section-head"><small data-i="s5"></small></div>
+<h2 data-i="c_h2"></h2><p data-i="c_p"></p>
+<a href="#home" class="btn btn-primary" data-i="c_btn"></a>
+</div></div></section>
+</main>
+<footer>© 2026 <span>habib-dev26</span> — <span data-i="f1" style="color:inherit;text-shadow:none"></span><br><br><span data-i="f2" style="color:inherit;text-shadow:none"></span></footer>
+
+<script>
+const T={
+n_home:['Bosh sahifa','Главная','Home'],n_about:['Men haqimda','Обо мне','About me'],n_skills:['Ko‘nikmalar','Навыки','Skills'],n_projects:['Loyihalar','Проекты','Projects'],n_all:['Barcha loyihalar ↗','Все проекты ↗','All projects ↗'],n_goals:['Maqsadlar','Цели','Goals'],n_contact:['Aloqa','Контакты','Contact'],
+tag:['BEGINNER DEVELOPER','НАЧИНАЮЩИЙ РАЗРАБОТЧИК','BEGINNER DEVELOPER'],
+h1:['Kelajakni<br><span>Kod bilan</span><br>Yarataman.','Я создаю<br><span>будущее</span><br>кодом.','I build<br><span>the future</span><br>with code.'],
+hp:['Men habib-dev26. Dasturlash olamiga endi qadam qo‘yayotgan yosh dasturchiman. Har kuni yangi bilim o‘rganib, o‘z g‘oyalarimni haqiqiy loyihalarga aylantirish ustida ishlayman.','Я habib-dev26. Юный программист, который только начинает путь в мире программирования. Каждый день узнаю что-то новое и превращаю свои идеи в настоящие проекты.','I’m habib-dev26, a young developer just starting out in programming. Every day I learn something new and turn my ideas into real projects.'],
+b1:['Loyihalarim ↗','Мои проекты ↗','My projects ↗'],
+s1:['01 / MEN HAQIMDA','01 / ОБО МНЕ','01 / ABOUT ME'],
+a_h2:['Men <span>haqimda</span>','Обо <span>мне</span>','About <span>me</span>'],
+a_p:['Kimligim, o‘qishim va dasturlashga bo‘lgan qiziqishim.','Кто я, где учусь и мой интерес к программированию.','Who I am, my studies and my interest in programming.'],
+a_c1h:['Salom! Men habib-dev26.','Привет! Я habib-dev26.','Hi! I’m habib-dev26.'],
+a_c1p:['AI Coding Lab jamoasida qatnashaman va dasturlashni o‘rganmoqdaman. Hozircha boshlang‘ich bosqichdaman, lekin maqsadim katta loyihalar yaratish va kuchli dasturchi bo‘lib yetishish.','Состою в команде AI Coding Lab и изучаю программирование. Пока я на начальном этапе, но моя цель — создавать большие проекты и стать сильным программистом.','I’m part of the AI Coding Lab team and learning programming. I’m still a beginner, but my goal is to build big projects and become a strong developer.'],
+a_c2h:['Shaxsiy ma’lumotlar','Личные данные','Personal info'],
+i_level:['Daraja','Уровень','Level'],i_team:['Jamoa','Команда','Team'],
+v_level:['Beginner Developer','Начинающий разработчик','Beginner Developer'],
+s2:['02 / KO‘NIKMALAR','02 / НАВЫКИ','02 / MY SKILLS'],
+sk_h2:['Mening <span>ko‘nikmalarim</span>','Мои <span>навыки</span>','My <span>skills</span>'],
+sk_p:['O‘rganayotgan va rivojlantirmoqchi bo‘lgan yo‘nalishlarim.','Направления, которые я изучаю и хочу развивать.','Areas I’m learning and want to grow in.'],
+html_p:['Veb-sahifalarning tuzilishini yaratishni o‘rganmoqdaman.','Учусь создавать структуру веб-страниц.','Learning to build the structure of web pages.'],
+css_p:['Saytlarning dizayni, ranglari va ko‘rinishi bilan ishlash.','Работа с дизайном, цветами и внешним видом сайтов.','Working on the design, colors and look of websites.'],
+js_p:['Saytlarga harakat va interaktiv imkoniyatlar qo‘shish.','Добавление движения и интерактивности на сайты.','Adding motion and interactivity to websites.'],
+s3:['03 / LOYIHALAR','03 / ПРОЕКТЫ','03 / MY PROJECTS'],
+pr_h2:['Mening <span>loyihalarim</span>','Мои <span>проекты</span>','My <span>projects</span>'],
+pr_p:['Dasturlash yo‘lidagi ilk ishlarim.','Мои первые работы в программировании.','My first steps in programming.'],
+p1h:['Kino olami','Мир кино','Movie world'],p1p:['Kinolarni ko‘rish va ular bilan tanishish uchun yaratilayotgan veb-sayt.','Веб-сайт, создаваемый для знакомства с фильмами.','A website being built to explore and discover movies.'],
+p2h:['Kitoblar olami','Мир книг','Book world'],p2p:['Kitoblar va manga asarlarini bir joyda jamlash g‘oyasi asosidagi sayt.','Сайт, где собраны книги и манга в одном месте.','A site based on the idea of collecting books and manga in one place.'],
+p3h:['Yangi g‘oyalar','Новые идеи','New ideas'],p3p:['Hozirda yangi bilimlar va kelajakdagi loyihalar ustida ishlashni rejalashtiryapman.','Сейчас планирую работать над новыми знаниями и будущими проектами.','I’m planning to work on new skills and future projects.'],
+lab1:['BIRINCHI LOYIHA','ПЕРВЫЙ ПРОЕКТ','FIRST PROJECT'],lab2:['REJADAGI ISHLAR','В ПЛАНАХ','PLANNED'],
+s4:['04 / MAQSADLAR','04 / ЦЕЛИ','04 / MY GOALS'],
+g_h2:['Kelajakdagi <span>maqsadlarim</span>','Мои <span>цели</span> на будущее','My future <span>goals</span>'],
+g_p:['Men erishmoqchi bo‘lgan natijalar.','Результаты, которых я хочу достичь.','Results I want to achieve.'],
+g1h:['Bilimni oshirish','Рост знаний','Growing knowledge'],g1p:['Dasturlashni chuqur o‘rganish va mustahkam bilimga ega bo‘lish.','Глубоко изучить программирование и получить прочные знания.','Learn programming in depth and build solid knowledge.'],
+g2h:['Katta loyihalar','Большие проекты','Big projects'],g2p:['O‘z g‘oyalarim asosida foydali va zamonaviy loyihalar yaratish.','Создавать полезные и современные проекты на основе своих идей.','Create useful, modern projects based on my own ideas.'],
+g3h:['Kuchli mutaxassis','Сильный специалист','Strong professional'],g3p:['Kelajakda o‘z sohasida kuchli mutaxassis bo‘lish va mustaqil ishlash.','Стать сильным специалистом в своей области и работать самостоятельно.','Become a strong specialist in my field and work independently.'],
+s5:['05 / ALOQA','05 / КОНТАКТЫ','05 / CONTACT'],
+c_h2:['G‘oyalar <span>yaratishga</span><br>tayyorman.','Готов<br><span>создавать</span> идеи.','Ready to <span>create</span><br>ideas.'],
+c_p:['Bu mening dasturlash yo‘lidagi boshlanishim. Oldinda hali ko‘plab bilimlar, tajribalar va loyihalar bor.','Это мой старт в программировании. Впереди ещё много знаний, опыта и проектов.','This is my start in programming. There is still a lot of knowledge, experience and projects ahead.'],
+c_btn:['Yuqoriga qaytish ↑','Наверх ↑','Back to top ↑'],
+f1:['Beginner Developer.','Начинающий разработчик.','Beginner Developer.'],f2:['Designed with <span style="color:var(--red)">♥</span> and code.','Создано с <span style="color:var(--red)">♥</span> и кодом.','Designed with <span style="color:var(--red)">♥</span> and code.']
+};
+const IDX={uz:0,ru:1,en:2};
+const store=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}},load=k=>{try{return localStorage.getItem(k)}catch(e){return null}};
+function setLang(l){if(!(l in IDX))l='uz';document.documentElement.lang=l;
+ document.querySelectorAll('[data-i]').forEach(e=>{const v=T[e.dataset.i];if(v)e.innerHTML=v[IDX[l]]});
+ document.getElementById('lang').value=l;store('lang',l)}
+function setTheme(t){document.documentElement.setAttribute('data-theme',t);document.getElementById('theme').textContent=t==='light'?'🌙':'☀️';store('theme',t)}
+document.getElementById('lang').addEventListener('change',e=>setLang(e.target.value));
+document.getElementById('theme').addEventListener('click',()=>setTheme(document.documentElement.getAttribute('data-theme')==='light'?'dark':'light'));
+setLang(load('lang')||'uz');setTheme(load('theme')||'dark');
+
+const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>{navLinks.classList.toggle('active');menuBtn.textContent=navLinks.classList.contains('active')?'✕':'☰'});
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('active');menuBtn.textContent='☰'}));
+const observer=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('show');observer.unobserve(en.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
