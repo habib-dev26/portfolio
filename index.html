@@ -604,10 +604,10 @@ footer span {
 <nav class="nav-links" id="navLinks">
 <a href="#home" data-i="n_home"></a><a href="#about" data-i="n_about"></a><a href="#skills" data-i="n_skills"></a><a href="#projects" data-i="n_projects"></a><a href="loyihalar.html" data-i="n_all"></a><a href="#goals" data-i="n_goals"></a><a href="#contact" data-i="n_contact"></a>
 </nav>
-<div class="ctl"><select id="lang" aria-label="Language"><option value="uz">UZ</option><option value="ru">RU</option><option value="en">EN</option></select><button id="theme" type="button" aria-label="Theme">☀️</button></div>
+<div class="ctl"><select id="lang" aria-label="Language"><option value="uz">UZ</option><option value="ru">RU</option><option value="en">EN</option><option value="ko">KO</option></select><button id="theme" type="button" aria-label="Theme">☀️</button></div>
 <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
 </div></header>
-<main>
+<main
 <section class="container hero" id="home">
 <div class="hero-text">
 <div class="tag"><i></i> <span data-i="tag"></span></div>
@@ -674,55 +674,87 @@ footer span {
 <footer>© 2026 <span>habib-dev26</span> — <span data-i="f1" style="color:inherit;text-shadow:none"></span><br><br><span data-i="f2" style="color:inherit;text-shadow:none"></span></footer>
 
 <script>
+
 const T={
-n_home:['Bosh sahifa','Главная','Home'],n_about:['Men haqimda','Обо мне','About me'],n_skills:['Ko‘nikmalar','Навыки','Skills'],n_projects:['Loyihalar','Проекты','Projects'],n_all:['Barcha loyihalar ↗','Все проекты ↗','All projects ↗'],n_goals:['Maqsadlar','Цели','Goals'],n_contact:['Aloqa','Контакты','Contact'],
-tag:['BEGINNER DEVELOPER','НАЧИНАЮЩИЙ РАЗРАБОТЧИК','BEGINNER DEVELOPER'],
-h1:['Kelajakni<br><span>Kod bilan</span><br>Yarataman.','Я создаю<br><span>будущее</span><br>кодом.','I build<br><span>the future</span><br>with code.'],
-hp:['Men habib-dev26. Dasturlash olamiga endi qadam qo‘yayotgan yosh dasturchiman. Har kuni yangi bilim o‘rganib, o‘z g‘oyalarimni haqiqiy loyihalarga aylantirish ustida ishlayman.','Я habib-dev26. Юный программист, который только начинает путь в мире программирования. Каждый день узнаю что-то новое и превращаю свои идеи в настоящие проекты.','I’m habib-dev26, a young developer just starting out in programming. Every day I learn something new and turn my ideas into real projects.'],
-b1:['Loyihalarim ↗','Мои проекты ↗','My projects ↗'],
-s1:['01 / MEN HAQIMDA','01 / ОБО МНЕ','01 / ABOUT ME'],
-a_h2:['Men <span>haqimda</span>','Обо <span>мне</span>','About <span>me</span>'],
-a_p:['Kimligim, o‘qishim va dasturlashga bo‘lgan qiziqishim.','Кто я, где учусь и мой интерес к программированию.','Who I am, my studies and my interest in programming.'],
-a_c1h:['Salom! Men habib-dev26.','Привет! Я habib-dev26.','Hi! I’m habib-dev26.'],
-a_c1p:['AI Coding Lab jamoasida qatnashaman va dasturlashni o‘rganmoqdaman. Hozircha boshlang‘ich bosqichdaman, lekin maqsadim katta loyihalar yaratish va kuchli dasturchi bo‘lib yetishish.','Состою в команде AI Coding Lab и изучаю программирование. Пока я на начальном этапе, но моя цель — создавать большие проекты и стать сильным программистом.','I’m part of the AI Coding Lab team and learning programming. I’m still a beginner, but my goal is to build big projects and become a strong developer.'],
-a_c2h:['Shaxsiy ma’lumotlar','Личные данные','Personal info'],
-i_level:['Daraja','Уровень','Level'],i_team:['Jamoa','Команда','Team'],
-v_level:['Beginner Developer','Начинающий разработчик','Beginner Developer'],
-s2:['02 / KO‘NIKMALAR','02 / НАВЫКИ','02 / MY SKILLS'],
-sk_h2:['Mening <span>ko‘nikmalarim</span>','Мои <span>навыки</span>','My <span>skills</span>'],
-sk_p:['O‘rganayotgan va rivojlantirmoqchi bo‘lgan yo‘nalishlarim.','Направления, которые я изучаю и хочу развивать.','Areas I’m learning and want to grow in.'],
-html_p:['Veb-sahifalarning tuzilishini yaratishni o‘rganmoqdaman.','Учусь создавать структуру веб-страниц.','Learning to build the structure of web pages.'],
-css_p:['Saytlarning dizayni, ranglari va ko‘rinishi bilan ishlash.','Работа с дизайном, цветами и внешним видом сайтов.','Working on the design, colors and look of websites.'],
-js_p:['Saytlarga harakat va interaktiv imkoniyatlar qo‘shish.','Добавление движения и интерактивности на сайты.','Adding motion and interactivity to websites.'],
-s3:['03 / LOYIHALAR','03 / ПРОЕКТЫ','03 / MY PROJECTS'],
-pr_h2:['Mening <span>loyihalarim</span>','Мои <span>проекты</span>','My <span>projects</span>'],
-pr_p:['Dasturlash yo‘lidagi ilk ishlarim.','Мои первые работы в программировании.','My first steps in programming.'],
-p1h:['Kino olami','Мир кино','Movie world'],p1p:['Kinolarni ko‘rish va ular bilan tanishish uchun yaratilayotgan veb-sayt.','Веб-сайт, создаваемый для знакомства с фильмами.','A website being built to explore and discover movies.'],
-p2h:['Kitoblar olami','Мир книг','Book world'],p2p:['Kitoblar va manga asarlarini bir joyda jamlash g‘oyasi asosidagi sayt.','Сайт, где собраны книги и манга в одном месте.','A site based on the idea of collecting books and manga in one place.'],
-p3h:['Yangi g‘oyalar','Новые идеи','New ideas'],p3p:['Hozirda yangi bilimlar va kelajakdagi loyihalar ustida ishlashni rejalashtiryapman.','Сейчас планирую работать над новыми знаниями и будущими проектами.','I’m planning to work on new skills and future projects.'],
-lab1:['BIRINCHI LOYIHA','ПЕРВЫЙ ПРОЕКТ','FIRST PROJECT'],lab2:['REJADAGI ISHLAR','В ПЛАНАХ','PLANNED'],
-s4:['04 / MAQSADLAR','04 / ЦЕЛИ','04 / MY GOALS'],
-g_h2:['Kelajakdagi <span>maqsadlarim</span>','Мои <span>цели</span> на будущее','My future <span>goals</span>'],
-g_p:['Men erishmoqchi bo‘lgan natijalar.','Результаты, которых я хочу достичь.','Results I want to achieve.'],
-g1h:['Bilimni oshirish','Рост знаний','Growing knowledge'],g1p:['Dasturlashni chuqur o‘rganish va mustahkam bilimga ega bo‘lish.','Глубоко изучить программирование и получить прочные знания.','Learn programming in depth and build solid knowledge.'],
-g2h:['Katta loyihalar','Большие проекты','Big projects'],g2p:['O‘z g‘oyalarim asosida foydali va zamonaviy loyihalar yaratish.','Создавать полезные и современные проекты на основе своих идей.','Create useful, modern projects based on my own ideas.'],
-g3h:['Kuchli mutaxassis','Сильный специалист','Strong professional'],g3p:['Kelajakda o‘z sohasida kuchli mutaxassis bo‘lish va mustaqil ishlash.','Стать сильным специалистом в своей области и работать самостоятельно.','Become a strong specialist in my field and work independently.'],
-s5:['05 / ALOQA','05 / КОНТАКТЫ','05 / CONTACT'],
-c_h2:['G‘oyalar <span>yaratishga</span><br>tayyorman.','Готов<br><span>создавать</span> идеи.','Ready to <span>create</span><br>ideas.'],
-c_p:['Bu mening dasturlash yo‘lidagi boshlanishim. Oldinda hali ko‘plab bilimlar, tajribalar va loyihalar bor.','Это мой старт в программировании. Впереди ещё много знаний, опыта и проектов.','This is my start in programming. There is still a lot of knowledge, experience and projects ahead.'],
-c_btn:['Yuqoriga qaytish ↑','Наверх ↑','Back to top ↑'],
-f1:['Beginner Developer.','Начинающий разработчик.','Beginner Developer.'],f2:['Designed with <span style="color:var(--red)">♥</span> and code.','Создано с <span style="color:var(--red)">♥</span> и кодом.','Designed with <span style="color:var(--red)">♥</span> and code.']
+n_home:['Bosh sahifa','Главная','Home','홈'],
+n_about:['Men haqimda','Обо мне','About me','소개'],
+n_skills:['Ko‘nikmalar','Навыки','Skills','기술'],
+n_projects:['Loyihalar','Проекты','Projects','프로젝트'],
+n_all:['Barcha loyihalar ↗','Все проекты ↗','All projects ↗','모든 프로젝트 ↗'],
+n_goals:['Maqsadlar','Цели','Goals','목표'],
+n_contact:['Aloqa','Контакты','Contact','연락처'],
+tag:['BEGINNER DEVELOPER','НАЧИНАЮЩИЙ РАЗРАБОТЧИК','BEGINNER DEVELOPER','초보 개발자'],
+h1:['Kelajakni<br><span>Kod bilan</span><br>Yarataman.','Я создаю<br><span>будущее</span><br>кодом.','I build<br><span>the future</span><br>with code.','미래를<br><span>코드로</span><br>만듭니다.'],
+hp:['Men habib-dev26. Dasturlash olamiga endi qadam qo‘yayotgan yosh dasturchiman. Har kuni yangi bilim o‘rganib, o‘z g‘oyalarimni haqiqiy loyihalarga aylantirish ustida ishlayman.','Я habib-dev26. Юный программист, который только начинает путь в мире программирования. Каждый день узнаю что-то новое и превращаю свои идеи в настоящие проекты.','I’m habib-dev26, a young developer just starting out in programming. Every day I learn something new and turn my ideas into real projects.','저는 habib-dev26입니다. 프로그래밍 세계에 첫발을 내딛는 젊은 개발자입니다. 매일 새로운 것을 배우고 제 아이디어를 실제 프로젝트로 만들기 위해 노력하고 있습니다.'],
+b1:['Loyihalarim ↗','Мои проекты ↗','My projects ↗','내 프로젝트 ↗'],
+s1:['01 / MEN HAQIMDA','01 / ОБО МНЕ','01 / ABOUT ME','01 / 소개'],
+a_h2:['Men <span>haqimda</span>','Обо <span>мне</span>','About <span>me</span>','<span>나에 대해</span>'],
+a_p:['Kimligim, o‘qishim va dasturlashga bo‘lgan qiziqishim.','Кто я, где учусь и мой интерес к программированию.','Who I am, my studies and my interest in programming.','저는 누구인지, 무엇을 공부하는지, 프로그래밍에 대한 관심을 소개합니다.'],
+a_c1h:['Salom! Men habib-dev26.','Привет! Я habib-dev26.','Hi! I’m habib-dev26.','안녕하세요! 저는 habib-dev26입니다.'],
+a_c1p:['AI Coding Lab jamoasida qatnashaman va dasturlashni o‘rganmoqdaman. Hozircha boshlang‘ich bosqichdaman, lekin maqsadim katta loyihalar yaratish va kuchli dasturchi bo‘lib yetishish.','Состою в команде AI Coding Lab и изучаю программирование. Пока я на начальном этапе, но моя цель — создавать большие проекты и стать сильным программистом.','I’m part of the AI Coding Lab team and learning programming. I’m still a beginner, but my goal is to build big projects and become a strong developer.','저는 AI Coding Lab 팀에서 활동하며 프로그래밍을 배우고 있습니다. 아직 초보 단계이지만 큰 프로젝트를 만들고 실력 있는 개발자가 되는 것이 목표입니다.'],
+a_c2h:['Shaxsiy ma’lumotlar','Личные данные','Personal info','개인 정보'],
+i_level:['Daraja','Уровень','Level','수준'],
+i_team:['Jamoa','Команда','Team','팀'],
+v_level:['Beginner Developer','Начинающий разработчик','Beginner Developer','초보 개발자'],
+s2:['02 / KO‘NIKMALAR','02 / НАВЫКИ','02 / MY SKILLS','02 / 기술'],
+sk_h2:['Mening <span>ko‘nikmalarim</span>','Мои <span>навыки</span>','My <span>skills</span>','나의 <span>기술</span>'],
+sk_p:['O‘rganayotgan va rivojlantirmoqchi bo‘lgan yo‘nalishlarim.','Направления, которые я изучаю и хочу развивать.','Areas I’m learning and want to grow in.','배우고 발전시키고 싶은 분야입니다.'],
+html_p:['Veb-sahifalarning tuzilishini yaratishni o‘rganmoqdaman.','Учусь создавать структуру веб-страниц.','Learning to build the structure of web pages.','웹 페이지의 구조를 만드는 방법을 배우고 있습니다.'],
+css_p:['Saytlarning dizayni, ranglari va ko‘rinishi bilan ishlash.','Работа с дизайном, цветами и внешним видом сайтов.','Working on the design, colors and look of websites.','웹사이트의 디자인, 색상 및 외관을 작업합니다.'],
+js_p:['Saytlarga harakat va interaktiv imkoniyatlar qo‘shish.','Добавление движения и интерактивности на сайты.','Adding motion and interactivity to websites.','웹사이트에 움직임과 상호작용 기능을 추가합니다.'],
+s3:['03 / LOYIHALAR','03 / ПРОЕКТЫ','03 / MY PROJECTS','03 / 프로젝트'],
+pr_h2:['Mening <span>loyihalarim</span>','Мои <span>проекты</span>','My <span>projects</span>','나의 <span>프로젝트</span>'],
+pr_p:['Dasturlash yo‘lidagi ilk ishlarim.','Мои первые работы в программировании.','My first steps in programming.','프로그래밍을 시작하며 만든 첫 작품들입니다.'],
+p1h:['Kino olami','Мир кино','Movie world','영화의 세계'],
+p1p:['Kinolarni ko‘rish va ular bilan tanishish uchun yaratilayotgan veb-sayt.','Веб-сайт, создаваемый для знакомства с фильмами.','A website being built to explore and discover movies.','영화를 감상하고 알아볼 수 있도록 제작 중인 웹사이트입니다.'],
+p2h:['Kitoblar olami','Мир книг','Book world','책의 세계'],
+p2p:['Kitoblar va manga asarlarini bir joyda jamlash g‘oyasi asosidagi sayt.','Сайт, где собраны книги и манга в одном месте.','A site based on the idea of collecting books and manga in one place.','책과 만화를 한곳에 모으는 것을 목표로 하는 웹사이트입니다.'],
+p3h:['Yangi g‘oyalar','Новые идеи','New ideas','새로운 아이디어'],
+p3p:['Hozirda yangi bilimlar va kelajakdagi loyihalar ustida ishlashni rejalashtiryapman.','Сейчас планирую работать над новыми знаниями и будущими проектами.','I’m planning to work on new skills and future projects.','새로운 지식과 앞으로의 프로젝트를 준비하고 있습니다.'],
+lab1:['BIRINCHI LOYIHA','ПЕРВЫЙ ПРОЕКТ','FIRST PROJECT','첫 번째 프로젝트'],
+lab2:['REJADAGI ISHLAR','В ПЛАНАХ','PLANNED','예정된 작업'],
+s4:['04 / MAQSADLAR','04 / ЦЕЛИ','04 / MY GOALS','04 / 목표'],
+g_h2:['Kelajakdagi <span>maqsadlarim</span>','Мои <span>цели</span> на будущее','My future <span>goals</span>','나의 미래 <span>목표</span>'],
+g_p:['Men erishmoqchi bo‘lgan natijalar.','Результаты, которых я хочу достичь.','Results I want to achieve.','제가 이루고 싶은 목표입니다.'],
+g1h:['Bilimni oshirish','Рост знаний','Growing knowledge','지식 향상'],
+g1p:['Dasturlashni chuqur o‘rganish va mustahkam bilimga ega bo‘lish.','Глубоко изучить программирование и получить прочные знания.','Learn programming in depth and build solid knowledge.','프로그래밍을 깊이 배우고 탄탄한 지식을 쌓는 것입니다.'],
+g2h:['Katta loyihalar','Большие проекты','Big projects','대규모 프로젝트'],
+g2p:['O‘z g‘oyalarim asosida foydali va zamonaviy loyihalar yaratish.','Создавать полезные и современные проекты на основе своих идей.','Create useful, modern projects based on my own ideas.','제 아이디어를 바탕으로 유용하고 현대적인 프로젝트를 만드는 것입니다.'],
+g3h:['Kuchli mutaxassis','Сильный специалист','Strong professional','실력 있는 전문가'],
+g3p:['Kelajakda o‘z sohasida kuchli mutaxassis bo‘lish va mustaqil ishlash.','Стать сильным специалистом в своей области и работать самостоятельно.','Become a strong specialist in my field and work independently.','미래에 제 분야의 실력 있는 전문가가 되어 독립적으로 일하는 것입니다.'],
+s5:['05 / ALOQA','05 / КОНТАКТЫ','05 / CONTACT','05 / 연락처'],
+c_h2:['G‘oyalar <span>yaratishga</span><br>tayyorman.','Готов<br><span>создавать</span> идеи.','Ready to <span>create</span><br>ideas.','아이디어를<br><span>만들 준비가</span> 되었습니다.'],
+c_p:['Bu mening dasturlash yo‘lidagi boshlanishim. Oldinda hali ko‘plab bilimlar, tajribalar va loyihalar bor.','Это мой старт в программировании. Впереди ещё много знаний, опыта и проектов.','This is my start in programming. There is still a lot of knowledge, experience and projects ahead.','이것은 프로그래밍 여정의 시작입니다. 앞으로 더 많은 지식과 경험, 프로젝트가 기다리고 있습니다.'],
+c_btn:['Yuqoriga qaytish ↑','Наверх ↑','Back to top ↑','맨 위로 ↑'],
+f1:['Beginner Developer.','Начинающий разработчик.','Beginner Developer.','초보 개발자.'],
+f2:['Designed with <span style="color:var(--red)">♥</span> and code.','Создано с <span style="color:var(--red)">♥</span> и кодом.','Designed with <span style="color:var(--red)">♥</span> and code.','♥와 코드로 만들었습니다.']
 };
-const IDX={uz:0,ru:1,en:2};
-const store=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}},load=k=>{try{return localStorage.getItem(k)}catch(e){return null}};
-function setLang(l){if(!(l in IDX))l='uz';document.documentElement.lang=l;
- document.querySelectorAll('[data-i]').forEach(e=>{const v=T[e.dataset.i];if(v)e.innerHTML=v[IDX[l]]});
- document.getElementById('lang').value=l;store('lang',l)}
-function setTheme(t){document.documentElement.setAttribute('data-theme',t);document.getElementById('theme').textContent=t==='light'?'🌙':'☀️';store('theme',t)}
+const IDX={uz:0,ru:1,en:2,ko:3};
+const store=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
+const load=k=>{try{return localStorage.getItem(k)}catch(e){return null}};
+
+function setLang(l){
+  if(!(l in IDX))l='uz';
+  document.documentElement.lang=l;
+  document.querySelectorAll('[data-i]').forEach(e=>{
+    const v=T[e.dataset.i];
+    if(v)e.innerHTML=v[IDX[l]];
+  });
+  document.getElementById('lang').value=l;
+  store('lang',l);
+}
+
+function setTheme(t){
+  document.documentElement.setAttribute('data-theme',t);
+  document.getElementById('theme').textContent=t==='light'?'🌙':'☀️';
+  store('theme',t);
+}
+
 document.getElementById('lang').addEventListener('change',e=>setLang(e.target.value));
 document.getElementById('theme').addEventListener('click',()=>setTheme(document.documentElement.getAttribute('data-theme')==='light'?'dark':'light'));
-setLang(load('lang')||'uz');setTheme(load('theme')||'dark');
 
+setLang(load('lang')||'uz');
+setTheme(load('theme')||'dark');
 const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');
 menuBtn.addEventListener('click',()=>{navLinks.classList.toggle('active');menuBtn.textContent=navLinks.classList.contains('active')?'✕':'☰'});
 document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('active');menuBtn.textContent='☰'}));
